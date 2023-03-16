@@ -1,91 +1,103 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Link from 'next/link';
+import { BiSearchAlt2 } from 'react-icons/bi';
+import { DiSmashingMagazine } from 'react-icons/di';
+import { FiShoppingCart, FiUser } from 'react-icons/fi';
+import styles from './page.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const products = [
+  {
+    id: 1,
+    name: 'Product 1',
+    price: 100,
+    image: 'https://picsum.photos/200/300',
+  },
+  {
+    id: 2,
+    name: 'Product 2',
+    price: 200,
+    image: 'https://picsum.photos/200/300',
+  },
+  {
+    id: 3,
+    name: 'Product 3',
+    price: 300,
+    image: 'https://picsum.photos/200/300',
+  },
+  {
+    id: 4,
+    name: 'Product 4',
+    price: 400,
+    image: 'https://picsum.photos/200/300',
+  },
+  {
+    id: 5,
+    name: 'Product 5',
+    price: 500,
+    image: 'https://picsum.photos/200/300',
+  },
+  {
+    id: 6,
+    name: 'Product 6',
+    price: 600,
+    image: 'https://picsum.photos/200/300',
+  },
+];
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className={styles.header}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          e
+          <DiSmashingMagazine size={24} />
+          HOP
+        </a>
+
+        <div className={styles.searchDiv}>
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Search"
+          />
+          <BiSearchAlt2 size={20} className={styles.iconInput} />
+        </div>
+
+        <div className={styles.headerMenu}>
+          <Link href={'/cart'}>
+            <FiShoppingCart size={24} />
+          </Link>
+          <Link href={'/account'}>
+            <FiUser size={24} />
+          </Link>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+      <div className={styles.content}>
+        <div className={styles.infoSearch}></div>
+        <div className={styles.searchResults}>
+          {products.map((product, index) => (
+            <div key={index} className={styles.product} key={product.id}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className={styles.imageProduct}
+              />
+              <div className={styles.productInfo}>
+                <h3>{product.name}</h3>
+                <h4> ${product.price}</h4>
+              </div>
+              <button className={styles.buttonProduct}>
+                <FiShoppingCart size={18} />
+                Add to cart
+              </button>
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
-  )
+  );
 }
