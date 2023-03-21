@@ -1,0 +1,16 @@
+.header {
+    @apply flex flex-row justify-between items-center w-full px-10 py-3 shadow;
+}
+.searchResults {
+    @apply grid grid-cols-4  justify-center items-center w-full gap-4 px-40 pt-10
+} 
+.bannerHeader {
+    @apply h-auto items-center w-full bg-bgprimary opacity-40;
+  }
+
+.headerMenu {
+    @apply flex flex-row justify-center items-center gap-10 px-10;
+}
+.imageBanner {
+    @apply bg-contain bg-center w-full h-full p-0;
+}

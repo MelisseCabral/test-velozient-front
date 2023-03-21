@@ -1,0 +1,24 @@
+.content {
+    @apply m-10 ml-20 flex flex-row;
+} 
+.productImage {
+    @apply border border-black w-96
+}
+.productInfo {
+    @apply m-10 mt-0
+}
+.title {
+    @apply text-2xl font-semibold
+}
+.subtitle {
+    @apply text-sm my-4
+}
+.price {
+    @apply text-3xl font-bold text-gray-500 my-4;
+}
+.action {
+    @apply  flex flex-row my-10 
+}
+.bottomActions {
+    @apply relative bottom-0
+}

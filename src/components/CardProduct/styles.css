@@ -1,0 +1,29 @@
+.product {
+    @apply flex flex-col items-center justify-center w-64 p-4 bg-white rounded-lg hover:shadow;
+}
+.product__image {
+    @apply w-full max-h-40 rounded;
+}
+.product__title {
+    @apply text-gray-800;
+}
+.product__price {
+    @apply text-lg font-bold text-gray-800;
+}
+.product__info {
+    @apply justify-between flex flex-col w-full my-4;
+}
+.product__description {
+    @apply text-sm text-gray-600 my-4;
+}
+.input_number {
+    @apply h-10 w-full mr-4 bg-gray-100 rounded-lg border-solid border border-black outline-none text-center;
+}
+.input_number[type=number]::-webkit-inner-spin-button, 
+.input_number[type=number]::-webkit-outer-spin-button {  
+    @apply opacity-100;
+
+}
+.container-actions{
+    @apply flex flex-row justify-between w-full;
+}

@@ -1,0 +1,5 @@
+.button {
+  @apply my-auto border bg-transparent flex h-11 flex-row items-center justify-center
+  gap-2 py-0 px-6 text-center border-solid rounded-full border-black uppercase font-normal
+  leading-9 tracking-wide transition delay-150;
+}

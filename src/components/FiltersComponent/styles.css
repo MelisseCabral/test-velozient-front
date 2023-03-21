@@ -1,0 +1,14 @@
+.barFilter {
+    @apply flex flex-row gap-3;
+}
+
+.searchContainer {
+    @apply flex bg-gray-100 flex-row justify-between items-center w-full gap-4 px-10 py-6;
+  }
+
+.showingContainer {
+    @apply border-l border-black pl-3 text-sm;
+}
+.icons  {
+    @apply flex flex-row gap-3 mx-4 my-auto
+}

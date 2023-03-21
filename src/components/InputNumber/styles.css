@@ -1,0 +1,13 @@
+.parent-primary {
+    @apply border border-black rounded mr-6 flex flex-row
+}
+.inputNumber {
+    @apply h-full outline-none w-12 text-center
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    opacity: 1;
+}
+.adornment {
+    @apply my-auto cursor-pointer
+}
